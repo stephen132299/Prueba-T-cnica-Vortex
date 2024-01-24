@@ -30,7 +30,7 @@ export class VehicleService implements serviceVehicle {
             return res.status(200).json({ success: true, message: 'Vehículo creado con éxito' });
         } catch (error) {
             console.error(error);
-            return res.status(500).json({ message: 'Error interno en el servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
      //Función para actualizar un Vehículo
@@ -56,7 +56,7 @@ export class VehicleService implements serviceVehicle {
 
         } catch (error) {
             console.error(error)
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -76,7 +76,7 @@ export class VehicleService implements serviceVehicle {
 
         } catch (error) {
             console.error(error)
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -99,7 +99,7 @@ export class VehicleService implements serviceVehicle {
 
         } catch (error) {
             console.error(error)
-           return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         } 
     }
 

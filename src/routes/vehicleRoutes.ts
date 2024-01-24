@@ -4,6 +4,7 @@ import { VehicleService } from '../services/controllers/vehicleController';
 const routerVehicle = Router();
 const vehicleService = new VehicleService();
 
+//Rutas de vehículo
 routerVehicle.post('/register', vehicleService.registerVehicle);
 routerVehicle.put('/update/:id', vehicleService.updateVehicle);
 routerVehicle.get('/search/:id', vehicleService.searchVehicleByPlate);

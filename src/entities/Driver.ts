@@ -41,10 +41,10 @@ export class Driver {
     updateAt: Date;
 
 
-    @OneToMany(() => Vehicle, vehicle => vehicle.driver)
+    @OneToMany(() => Vehicle, vehicle => vehicle.driver) //Llave fóranea Vehicle - Driver
     vehicles: Vehicle[];
 
-    @OneToMany(() => Order, order => order.driver)
+    @OneToMany(() => Order, order => order.driver) //Llave fóranea Orider - Driver
     orders: Order[];
 
 }

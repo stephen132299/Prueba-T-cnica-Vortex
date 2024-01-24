@@ -9,7 +9,7 @@ export class Department {
     @Column( { length: 30, type: 'varchar' })
     name: string;
    
-    @OneToMany(() => Municipality, municipality => municipality.department)
+    @OneToMany(() => Municipality, municipality => municipality.department) //Llave fóranea Municipality - Department
     municipalities: Municipality;
 
 }

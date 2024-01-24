@@ -4,6 +4,7 @@ import { inicializateDatabase } from "./database/ormconfig";
 
 const PORT = process.env.PORT || 3000;
 
+//Método que corre el servidor
 async function main(){
     try {
         await inicializateDatabase();

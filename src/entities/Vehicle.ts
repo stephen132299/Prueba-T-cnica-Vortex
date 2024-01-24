@@ -22,9 +22,9 @@ export class Vehicle {
     @Column({ type: 'date' })
     updateAt: Date;
 
-    @ManyToOne(() => Driver, driver => driver.vehicles)
+    @ManyToOne(() => Driver, driver => driver.vehicles)//Llave fóranea Driver - Vehicle
     driver?: Driver | null;
 
-    @ManyToOne(() => Route, route => route.vehicles)
+    @ManyToOne(() => Route, route => route.vehicles)//Llave fóranea Route - Vehicle
     route: Route;
 }   

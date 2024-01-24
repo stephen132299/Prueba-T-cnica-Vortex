@@ -33,7 +33,7 @@ export class DriverService implements DriverServie {
 
         } catch (error) {
             console.error(error);
-            return res.status(500).json({ message: 'Error interno en el servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -43,7 +43,6 @@ export class DriverService implements DriverServie {
             const identification = req.params.id
             const driver = req.body
             driver.updateAt = new Date();
-            console.log(identification, driver);
             
             const existingDriver = await getRepository(Driver).findOne({
                 where: { 
@@ -60,7 +59,7 @@ export class DriverService implements DriverServie {
 
         } catch (error) {
             console.error(error)
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -74,12 +73,12 @@ export class DriverService implements DriverServie {
                 }
             });
 
-            if(existingDriver) return res.status(404).json({ message: 'El conductor a buscar no existe' });
+            if(!existingDriver) return res.status(404).json({ message: 'El conductor a buscar no existe' });
             return res.status(200).json({ success: true, message: 'Conductor encontrado con éxito', data: existingDriver });
 
         } catch (error) {
             console.error(error)
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -100,7 +99,7 @@ export class DriverService implements DriverServie {
 
         } catch (error) {
             console.error(error)
-           return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         } 
     }
 
@@ -125,7 +124,7 @@ export class DriverService implements DriverServie {
             });
 
             if (vehicles.length === 0) return res.status(404).json({ success: false, message: 'No se encontraron vehículos disponibles' });
-                // Asociar al conductor a los vehículos
+            // Asociar al conductor a los vehículos
             vehicles.forEach(async (vehicle) => {
                 vehicle.driver = driverId;
                 await getRepository(Vehicle).update({plate: vehicle.plate}, vehicle);
@@ -135,7 +134,7 @@ export class DriverService implements DriverServie {
                 
         } catch (error) {
             console.error(error);
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
     }
 
@@ -169,7 +168,7 @@ export class DriverService implements DriverServie {
                 
         } catch (error) {
             console.error(error);
-            return res.status(500).json({ message: 'Error interno del servidor' });
+            return res.status(400).json({ error_message: `Ha ocurrido un error ${error}` });
         }
         
     }

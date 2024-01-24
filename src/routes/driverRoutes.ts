@@ -4,6 +4,7 @@ import { DriverService } from '../services/controllers/driverController';
 const routerDriver = Router();
 const driverService = new DriverService();
 
+//Rutas de conductor
 routerDriver.post('/register', driverService.registerDriver);
 routerDriver.put('/update/:id', driverService.updateDriver);
 routerDriver.get('/search/:id', driverService.searchByIdDriver);

@@ -33,7 +33,7 @@ export class Client {
     @Column({ type: 'date' })
     updateAt: Date;
 
-    @OneToMany(() => Order, order => order.client)
+    @OneToMany(() => Order, order => order.client) //Llave fóranea Client - Order
     orders: Order[];
 
 

@@ -7,6 +7,7 @@ import { Municipality } from '../entities/Municipality';
 import { Department } from '../entities/Department';
 import { Route } from '../entities/Route';
 
+//Configuración de ORM para la conexión a la BD PostgreSQL
 export const inicializateDatabase = async () => {
     await createConnection({
       type: "postgres",

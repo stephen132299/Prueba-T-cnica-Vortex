@@ -22,15 +22,15 @@ export class Route {
     @Column({ type: 'date' })
     updateAt: Date;
 
-    @ManyToMany(() => Municipality, municipality => municipality.routes)
+    @ManyToMany(() => Municipality, municipality => municipality.routes)//Llave fóranea Municipality - Route
     @JoinTable()
     municipalitiesOrigin: Municipality[];
 
-    @ManyToMany(() => Municipality, municipality => municipality.routes)
+    @ManyToMany(() => Municipality, municipality => municipality.routes)//Llave fóranea Municipality - Route
     @JoinTable()
     municipalitiesDestination: Municipality[];
 
-    @OneToMany(() => Vehicle, vehicle => vehicle.route)
+    @OneToMany(() => Vehicle, vehicle => vehicle.route)//Llave fóranea Vehicle - Route
     vehicles: Vehicle[];
    
 }

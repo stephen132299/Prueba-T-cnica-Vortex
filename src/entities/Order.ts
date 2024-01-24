@@ -19,9 +19,9 @@ export class Order {
     @Column({ type: 'date' })
     updateAt: Date;
 
-    @ManyToOne(() => Driver, driver => driver.orders)
+    @ManyToOne(() => Driver, driver => driver.orders)//Llave fóranea Driver - Order
     driver: Driver;
 
-    @ManyToOne(() => Client, client => client.orders)
+    @ManyToOne(() => Client, client => client.orders)//Llave fóranea Client - Order
     client: Client;
 }

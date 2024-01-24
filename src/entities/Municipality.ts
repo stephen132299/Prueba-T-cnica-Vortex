@@ -13,8 +13,8 @@ export class Municipality {
     @ManyToOne(() => Department, deparment => deparment.municipalities)
     department: Department;
 
-    @ManyToMany(() => Route, route => route.municipalitiesOrigin)
-    @ManyToMany(() => Route, route => route.municipalitiesDestination)
+    @ManyToMany(() => Route, route => route.municipalitiesOrigin)//Llave fóranea Department - Municipality
+    @ManyToMany(() => Route, route => route.municipalitiesDestination)//Llave fóranea Department - Municipality
     @JoinTable()
     routes: Route[];
 
